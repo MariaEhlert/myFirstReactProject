@@ -95,25 +95,6 @@
             <h2>{(hour) > 12 ? "Goddag" : "Godmorgen"}</h2>
             ) 
         }
-        //alle funktioner i en funktion
-          const AllFunctions = () => {
-            return (
-              <section>
-                <h2>Alle funktionerne i en funktion</h2>
-                <div>{Example()}</div>
-                <div>{JSXWithExpression()}</div>
-                <div>{FoodExpression()}</div>
-                <div>{ToExpressions()}</div>
-                <div>{ReactFragment()}</div>
-                <div>{InputElemet()}</div>
-                <div>{ClassSection()}</div>
-                <div>{TimeFunction()}</div>
-                <div>{TimeFunction2()}</div>
-              </section>
-            )
-
-        }
-
         const App = () => {
           return (
             //dette er en react fragment <> </>
@@ -127,7 +108,6 @@
             <ClassSection />
             <TimeFunction />
             <TimeFunction2 />
-            <AllFunctions />
             </>
           )
         }
