@@ -11,6 +11,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
+      //Functioner skal starte med stort
       // Her skal du indsætte din react kode
         const Example = () => {
           return (
@@ -42,28 +43,19 @@
         const ToExpressions = () => {
           return (
             <section>
-              <div>
-                <h2>Spis masser af kage!</h2>
-              </div>
-
-              <div>
-                <h3>Det gør dig glad!</h3>
-              </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit officia dolorem veniam totam ad molestias. Omnis minus sit quae odio earum? Ea necessitatibus repellendus, esse odio voluptatum dicta excepturi deserunt?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt doloribus repudiandae, voluptates, libero a sed eveniet labore ullam repellat veniam consequuntur perferendis exercitationem non in ipsa quasi. Debitis, consectetur doloremque?</p>
             </section>
           )
         }
 
         const ReactFragment = () => {
           return (
-            <React.Fragment>
-              <div>
-                <h2>Spis masser af kage!</h2>
-              </div>
-
-              <div>
-                <h3>Det gør dig glad!</h3>
-              </div>
-            </React.Fragment>
+            //dette er en react fragment <> </>
+            <>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit officia dolorem veniam totam ad molestias. Omnis minus sit quae odio earum? Ea necessitatibus repellendus, esse odio voluptatum dicta excepturi deserunt?</p>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt doloribus repudiandae, voluptates, libero a sed eveniet labore ullam repellat veniam consequuntur perferendis exercitationem non in ipsa quasi. Debitis, consectetur doloremque?</p>
+            </>
           )
         }
 
@@ -80,32 +72,34 @@
           //man skal skrive className da class bliver brugt til javascript 
           return (
             <section className="mainwrapper">
-              <h2>Har klassen mainwrapper</h2>
+              <h2>Ligge i sektion med klassen mainwrapper</h2>
             </section>
           )
         }
         //kan laves på to måder
         //if statement 
         const TimeFunction = () => {
-          const x = 11;
-          let text = "Goddag";
-          if ( x < 12 ) {
-            return (
-              <h2>{text = "Godmorgen"}</h2> 
-              )   
+          const hour = new Date().getHours()
+          let text = "Godmorgen";
+          if ( hour > 12 ) {
+            text = "Goddag";
           }
+          return ( 
+            <div>{text}</div>
+          )
         }
         //ternary operator måde 
         const TimeFunction2 = () => {
-          const x = 11;
+          const hour = new Date().getHours()
           return (
-            <h1>{(x) < 12 ? "Godmorgen" : "Goddag"}</h1>
+            <h2>{(hour) > 12 ? "Goddag" : "Godmorgen"}</h2>
             ) 
         }
-//alle funktioner i en funktion
+        //alle funktioner i en funktion
           const AllFunctions = () => {
-            return(
+            return (
               <section>
+                <h2>Alle funktionerne i en funktion</h2>
                 <div>{Example()}</div>
                 <div>{JSXWithExpression()}</div>
                 <div>{FoodExpression()}</div>
@@ -120,20 +114,28 @@
 
         }
 
+        const App = () => {
+          return (
+            //dette er en react fragment <> </>
+            <>
+            <Example />
+            <JSXWithExpression />
+            <FoodExpression />
+            <ToExpressions />
+            <ReactFragment />
+            <InputElemet />
+            <ClassSection />
+            <TimeFunction />
+            <TimeFunction2 />
+            <AllFunctions />
+            </>
+          )
+        }
         ReactDOM.render(
             //man skal afslutte sine tags når man bruger react />,     (XML)
             //der kan kun være et const af gangen
 
-            // <Example />,  
-            // <JSXWithExpression />,
-            // <FoodExpression />,
-            // <ToExpressions />,
-            // <ReactFragment />,
-            // <InputElemet />,
-            // <ClassSection />,
-            // <TimeFunction />,
-            // <TimeFunction2 />,
-            <AllFunctions />,
+            <App />,
             document.getElementById('root')
         )
 
