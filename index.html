@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>HTML Template til React</title>
+  </head>
+  <body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+      // Her skal du indsætte din react kode
+        const Example = () => {
+          return (
+              <h2>JSX er godt for maven!</h2>  //man kan ikke skrive mere end et tag på denne måde
+          )
+        }
+
+        const JSXWithExpression = () => {
+            return (
+                //skal have et overordnet tag (i dette tilfælde et div tag)
+                //expression skal pakkes ind i  {}    (det kan man bruge til at lave et udregning)
+                <div>JSX er {10*10} gange bedre end HTML</div>
+            )
+        }
+
+        const FoodExpression = () => {
+          return (
+            <section>
+            <h2>Mine livretter</h2>
+            <li>Kage</li>
+            <li>Gratis mad</li>
+            <li>Hjemmelavet mad</li>
+            <li>Mad lavet med kærlighed</li>
+            <li>Dansk mad</li>
+            </section>
+          )
+        }
+
+        const ToExpressions = () => {
+          return (
+            <section>
+              <div>
+                <h2>Spis masser af kage!</h2>
+              </div>
+
+              <div>
+                <h3>Det gør dig glad!</h3>
+              </div>
+            </section>
+          )
+        }
+
+        const ReactFragment = () => {
+          return (
+            <React.Fragment>
+              <div>
+                <h2>Spis masser af kage!</h2>
+              </div>
+
+              <div>
+                <h3>Det gør dig glad!</h3>
+              </div>
+            </React.Fragment>
+          )
+        }
+
+        const InputElemet = () => {
+          //husk at tags skal afsluttes så et tag som input skal man selv skrive / inden >
+          return (
+            <form>
+              <input type="text" placeholder="input" />
+            </form>
+          )
+        }
+
+        const ClassSection = () => {
+          //man skal skrive className da class bliver brugt til javascript 
+          return (
+            <section className="mainwrapper">
+              <h2>Har klassen mainwrapper</h2>
+            </section>
+          )
+        }
+        //kan laves på to måder
+        //if statement 
+        const TimeFunction = () => {
+          const x = 11;
+          let text = "Goddag";
+          if ( x < 12 ) {
+            return (
+              <h2>{text = "Godmorgen"}</h2> 
+              )   
+          }
+        }
+        //ternary operator måde 
+        const TimeFunction2 = () => {
+          const x = 11;
+          return (
+            <h1>{(x) < 12 ? "Godmorgen" : "Goddag"}</h1>
+            ) 
+        }
+//alle funktioner i en funktion
+          const AllFunctions = () => {
+            return(
+              <section>
+                <div>{Example()}</div>
+                <div>{JSXWithExpression()}</div>
+                <div>{FoodExpression()}</div>
+                <div>{ToExpressions()}</div>
+                <div>{ReactFragment()}</div>
+                <div>{InputElemet()}</div>
+                <div>{ClassSection()}</div>
+                <div>{TimeFunction()}</div>
+                <div>{TimeFunction2()}</div>
+              </section>
+            )
+
+        }
+
+        ReactDOM.render(
+            //man skal afslutte sine tags når man bruger react />,     (XML)
+            //der kan kun være et const af gangen
+
+            // <Example />,  
+            // <JSXWithExpression />,
+            // <FoodExpression />,
+            // <ToExpressions />,
+            // <ReactFragment />,
+            // <InputElemet />,
+            // <ClassSection />,
+            // <TimeFunction />,
+            // <TimeFunction2 />,
+            <AllFunctions />,
+            document.getElementById('root')
+        )
+
+
+    </script>
+
+  </body>
+</html>
